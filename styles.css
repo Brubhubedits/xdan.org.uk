@@ -1,0 +1,270 @@
+:root {
+  --primary-color: #6a1b9a;
+  --secondary-color: #9c27b0;
+  --accent-color: #e1bee7;
+  --background: #1a1a2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: white;
+  min-height: 100vh;
+}
+
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcome-screen h1 {
+  font-size: 4rem;
+  color: var(--accent-color);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--primary-color),
+                 0 0 20px var(--secondary-color),
+                 0 0 30px var(--accent-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--primary-color),
+                 0 0 30px var(--secondary-color),
+                 0 0 40px var(--accent-color);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+header {
+  padding: 2rem;
+  background: rgba(106, 27, 154, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.description {
+  padding: 3rem;
+  text-align: center;
+}
+
+.description-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(156, 39, 176, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.buy-now-btn, .contact-btn, .social-btn, .paypal-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.buy-now-btn:hover, .contact-btn:hover, .social-btn:hover, .paypal-btn:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+.portfolio {
+  padding: 2rem;
+  text-align: center;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background: var(--background);
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.popup-option {
+  background: rgba(156, 39, 176, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.popup-option h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.popup-option p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.payment-option {
+  border: 1px solid var(--primary-color);
+}
+
+.contact-option {
+  border: 1px solid var(--secondary-color);
+}
+
+.social-section, .payment-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--accent-color);
+}
+
+.social-section {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+h2, h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-screen h1 {
+    font-size: 2rem;
+  }
+  
+  .description {
+    padding: 1rem;
+  }
+  
+  .popup-content {
+    margin: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .popup-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .popup-option {
+    padding: 1rem;
+  }
+}
