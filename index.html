@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XDan - Video Editing</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="welcome-screen">
+    <h1>Welcome!</h1>
+  </div>
+
+  <main class="hidden">
+    <header>
+      <div class="logo-container">
+        <img src="https://xdan.co.uk/icon1.png" alt="XDan Logo" class="logo">
+        <h1>XDan</h1>
+      </div>
+    </header>
+
+    <section class="description">
+      <div class="description-content">
+        <h2>Professional Video Editing</h2>
+        <p>Hey! I'm Dan, and I'm starting out with video editing as a side job to help generate some extra income. I edit using DaVinci Resolve or Kdenlive on Linux, and my style is for long form. I cut down and add sound effects, green screen stuff etc. It's cheap because the production quality isn't crazy good, but it is worth your money.</p>
+        <button class="buy-now-btn" onclick="openPaymentPopup()">
+          <i class="fab fa-paypal"></i> Buy Now - £10
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <h2>My Work</h2>
+      <div class="video-grid">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/u1Z0UUhiTpw?si=zWuG0grCM3J6pTWx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/yM5tmM3UQ4I?si=Bk-8aOf9bkLmZ09E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="popup" id="paymentPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div class="popup-grid">
+        <div class="popup-option payment-option">
+          <h2>PayPal</h2>
+          <p>This is easier for me, and I'll get back to you quicker and start work right away. Include contact info in the payment comment.</p>
+          <a href="https://paypal.me/xdanfr/10" class="paypal-btn">
+            <i class="fab fa-paypal"></i> Pay £10 with PayPal
+          </a>
+        </div>
+        
+        <div class="popup-option contact-option">
+          <h2>Contact First</h2>
+          <p>Whether you're sceptical or just want to talk beforehand, contact me with the button below.</p>
+          <a href="mailto:danielopinionr@gmail.com" class="contact-btn">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          
+          <div class="social-section">
+            <h3>Prefer social media?</h3>
+            <a href="https://instagram.com/yourfav.dan" class="social-btn">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
