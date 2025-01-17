@@ -52,13 +52,22 @@ function startMainAnimations() {
 }
 
 function openPaymentPopup() {
-  document.getElementById('paymentPopup').style.display = 'block';
+  const popup = document.getElementById('paymentPopup');
+  popup.style.display = 'block';
+  // Trigger reflow to enable transition
+  popup.offsetHeight;
+  popup.classList.add('show');
   document.body.style.overflow = 'hidden';
 }
 
 function closePopup() {
-  document.getElementById('paymentPopup').style.display = 'none';
-  document.body.style.overflow = 'auto';
+  const popup = document.getElementById('paymentPopup');
+  popup.classList.remove('show');
+  // Wait for animations to complete before hiding
+  setTimeout(() => {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }, 500);
 }
 
 // Close popup when clicking outside
