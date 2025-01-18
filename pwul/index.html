@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pwul</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="welcome-screen">
+    <h1>Welcome!</h1>
+  </div>
+
+  <main class="hidden">
+    <header>
+      <div class="logo-container">
+        <h1>pwul</h1>
+      </div>
+    </header>
+
+    <section class="description">
+      <div class="description-content">
+        <h2>Video Editing & Thumbnails</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button class="buy-now-btn" onclick="openPaymentPopup()">
+          <i class="fab fa-paypal"></i> Get Now
+        </button>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="pricing-content">
+        <h2>What I Offer</h2>
+        <div class="pricing-table">
+          <div class="pricing-tier">
+            <h3 class="tier-header">Thumbnails</h3>
+            <div class="tier-price">$6.90</div>
+            <div class="tier-description">
+              <p>YouTube Thumbnail for your video.</p>
+              <p>Please Direct Message @nqit on Discord *BEFORE* purchase so we can discuss details</p>
+              <ul class="feature-list">
+                <li>// 1280 x 720 //</li>
+                <li>// Best Quality Possible //</li>
+                <li>// any file type (.png, .jpg, .svg, etc..) //</li>
+              </ul>
+            </div>
+            <button class="buy-now-btn" onclick="openPaymentPopup('thumbnail')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+
+          <div class="pricing-tier">
+            <h3 class="tier-header">Video Editing</h3>
+            <div class="tier-price">$10.69</div>
+            <div class="tier-description">
+              <p>Fully Edited YouTube Video</p>
+              <p>Please Direct Message @nqit on Discord *BEFORE* purchase so we can discuss details</p>
+              <ul class="feature-list">
+                <li>// 4k 60fps // mp4 //</li>
+                <li>// Max Bitrate //</li>
+                <li>// Best Quality Possible //</li>
+              </ul>
+            </div>
+            <button class="buy-now-btn" onclick="openPaymentPopup('video')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+
+          <div class="pricing-tier">
+            <h3 class="tier-header">Content Pack</h3>
+            <div class="tier-price">$16.99</div>
+            <div class="tier-description">
+              <p>Fully Edited Video & YouTube Thumbnail for your video.</p>
+              <p>Please Direct Message @nqit on Discord *BEFORE* purchase so we can discuss details</p>
+              <h4>Thumbnail:</h4>
+              <ul class="feature-list">
+                <li>// 1280 x 720 //</li>
+                <li>// Best Quality Possible //</li>
+                <li>// any file type (.png, .jpg, .svg, etc..) //</li>
+              </ul>
+              <h4>Video:</h4>
+              <ul class="feature-list">
+                <li>// 4k 60fps // mp4 //</li>
+                <li>// Max Bitrate //</li>
+                <li>// Best Quality Possible //</li>
+              </ul>
+            </div>
+            <button class="buy-now-btn" onclick="openPaymentPopup('pack')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+        </div>
+        
+        <div class="optional-additions">
+          <h2>Optional Additions</h2>
+          <div class="additions-grid">
+            <div class="addition-item">
+              <div class="content-wrapper">
+                <i class="fas fa-closed-captioning"></i>
+                <h3>Subtitles</h3>
+                <p class="addition-price">$2.00</p>
+                <p>Professional subtitles added to your video</p>
+              </div>
+              <a href="#" class="see-example-link" onclick="highlightSubtitlesExample(); return false;">
+                See example <i class="fas fa-eye"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <h2 class="section-animate">My Work</h2>
+      <div class="video-grid">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/k_QDG0iWwDw?si=OmlOAv3xyAWJGBrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0GTcDR-AJ7k?si=b3GtDvVqUQZ802_d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <h3 class="section-animate thumbnail-heading">Thumbnails</h3>
+      <div class="thumbnail-grid">
+        <div class="thumbnail-container">
+          <img src="https://img.youtube.com/vi/u1Z0UUhiTpw/maxresdefault.jpg" alt="Thumbnail 1">
+        </div>
+        <div class="thumbnail-container">
+          <img src="https://img.youtube.com/vi/yM5tmM3UQ4I/maxresdefault.jpg" alt="Thumbnail 2">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="popup" id="paymentPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div class="popup-grid">
+        <div class="popup-option payment-option">
+          <h2>PayPal</h2>
+          <button class="undo-tier" onclick="undoTierSelection()">
+            <i class="fas fa-undo"></i> Change Option
+          </button>
+          <div class="selected-tier-display"></div>
+          <p>Choose this if you have already DMed me</p>
+          
+          <div class="tier-selector">
+            <h3>Select Your Option</h3>
+            <div class="tier-buttons">
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="6.90" onclick="selectTier('thumbnail')">Thumbnail - $6.90</button>
+              </div>
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="10.69" onclick="selectTier('video')">Video - $10.69</button>
+              </div>
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="16.99" onclick="selectTier('pack')">Content Pack - $16.99</button>
+              </div>
+            </div>
+            <a href="#what-i-offer" class="help-link" onclick="scrollToOffers()">
+              Help, what do these mean? <i class="fas fa-question-circle"></i>
+            </a>
+          </div>
+
+          <div class="additions-selector">
+            <h3>Optional Add-ons</h3>
+            <label class="addon-checkbox">
+              <input type="checkbox" id="subtitles" onchange="updatePrice()">
+              Add Subtitles (+$2.00)
+            </label>
+          </div>
+
+          <div class="total-price">
+            <h3>Total: $<span id="totalPrice">0.00</span></h3>
+          </div>
+
+          <a href="#" id="paypalButton" class="paypal-btn" onclick="return handlePayment()">
+            <i class="fab fa-paypal"></i> Purchase with PayPal
+          </a>
+        </div>
+        
+        <div class="popup-option contact-option">
+          <h2>Discord</h2>
+          <p>Contact me on Discord before making a purchase</p>
+          <a href="https://discord.com/users/204625571865427968" class="contact-btn">
+            <i class="fab fa-discord"></i> Add @nqit
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
