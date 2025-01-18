@@ -1,0 +1,547 @@
+:root {
+  --primary-color: #6a1b9a;
+  --secondary-color: #9c27b0;
+  --accent-color: #e1bee7;
+  --background: #1a1a2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: white;
+  min-height: 100vh;
+}
+
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcome-screen h1 {
+  font-size: 4rem;
+  color: var(--accent-color);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--primary-color),
+                 0 0 20px var(--secondary-color),
+                 0 0 30px var(--accent-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--primary-color),
+                 0 0 30px var(--secondary-color),
+                 0 0 40px var(--accent-color);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+header {
+  padding: 2rem;
+  background: rgba(106, 27, 154, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+
+.logo-container.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.thank-you {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+}
+
+.thank-you-content {
+  max-width: 800px;
+  background: rgba(156, 39, 176, 0.1);
+  padding: 3rem;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease;
+  text-align: center;
+}
+
+.thank-you-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.thank-you-content h2 {
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.thank-you-content .message {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.next-steps {
+  text-align: left;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(106, 27, 154, 0.2);
+  border-radius: 15px;
+}
+
+.next-steps h3 {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.next-steps ol {
+  list-style: none;
+  counter-reset: steps;
+}
+
+.next-steps li {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s ease;
+}
+
+.next-steps li .step-content {
+  flex: 1;
+}
+
+.next-steps li.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.next-steps li::before {
+  counter-increment: steps;
+  content: counter(steps);
+  background: var(--primary-color);
+  color: white;
+  min-width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.next-steps li i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.note {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(106, 27, 154, 0.2);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #e1bee7;
+}
+
+.email-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  color: white;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.contact-options {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-btn, .home-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn:hover, .home-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.contact-btn::after, .home-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+}
+
+.contact-btn:hover::after, .home-btn:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.return-home {
+  margin-top: 3rem;
+}
+
+.discord-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.discord-popup.show {
+  opacity: 1;
+}
+
+.popup-content {
+  position: relative;
+  background: var(--background);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.discord-popup.show .popup-content {
+  transform: translateY(0);
+}
+
+.join-discord-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  background: #5865F2;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-discord-btn i {
+  margin-right: 0.8rem;
+  font-size: 1.2em;
+}
+
+.join-discord-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+  box-shadow: 0 0 15px #7289DA;
+}
+
+.join-discord-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+}
+
+.join-discord-btn:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.discord-help {
+  text-align: left;
+  padding: 1rem;
+}
+
+.discord-help h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.help-steps {
+  background: rgba(106, 27, 154, 0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.help-steps ol {
+  list-style: none;
+  counter-reset: discord-steps;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.help-steps li {
+  counter-increment: discord-steps;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s ease;
+}
+
+.help-steps li.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.help-steps li::before {
+  content: counter(discord-steps);
+  background: var(--primary-color);
+  color: white;
+  min-width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.cant-reach-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cant-reach-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cant-reach-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+}
+
+.cant-reach-btn:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.cant-reach-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.cant-reach-message {
+  background: rgba(156, 39, 176, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.cant-reach-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  background: var(--secondary-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.close-btn i {
+  position: relative;
+  top: -1px;
+}
+
+@media (max-width: 768px) {
+  .welcome-screen h1 {
+    font-size: 2.5rem;
+  }
+  
+  .thank-you {
+    padding: 1.5rem;
+  }
+  
+  .thank-you-content {
+    padding: 1.5rem;
+  }
+  
+  .thank-you-content h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .next-steps {
+    padding: 1.5rem;
+  }
+  
+  .discord-help h2 {
+    font-size: 1.5rem;
+  }
+  
+  .help-steps {
+    padding: 1rem;
+  }
+  
+  .help-steps li {
+    font-size: 0.9rem;
+  }
+}

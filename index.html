@@ -2,8 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Video editing!">
-  <title>XDan (Video Editing)</title>
+  <title>XDan - YouTube Video Editing</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -26,8 +25,93 @@
         <h2>YouTube Video Editing</h2>
         <p>Hey! I'm Dan, and I'm starting out with YouTube video editing as a side job to help generate some extra income. I edit using DaVinci Resolve or Kdenlive on Linux, and my style is for long form. I cut down and add sound effects, green screen stuff etc. It's cheap because the production quality isn't crazy good, but it is worth your money.</p>
         <button class="buy-now-btn" onclick="openPaymentPopup()">
-          <i class="fab fa-paypal"></i> Buy Now - £10
+          <i class="fab fa-paypal"></i> Buy Now
         </button>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="pricing-content">
+        <h2>What I Offer</h2>
+        <div class="pricing-table">
+          <div class="pricing-tier">
+            <h3 class="tier-header">Basic</h3>
+            <div class="tier-price">£5</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Up to 90 minutes of footage</li>
+              <li><i class="fas fa-check"></i> Trim clips down</li>
+              <li><i class="fas fa-check"></i> Background music</li>
+              <li><i class="fas fa-check"></i> Add intro/outro if provided</li>
+              <li><i class="fas fa-times"></i> Sound effects</li>
+              <li><i class="fas fa-times"></i> Green screen effects</li>
+              <li><i class="fas fa-times"></i> Memes and extras</li>
+              <li><i class="fas fa-times"></i> Revisions included</li>
+              <li><i class="fas fa-times"></i> Source file included</li>
+            </ul>
+            <button class="buy-now-btn" onclick="openPaymentPopup('basic')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+
+          <div class="pricing-tier">
+            <h3 class="tier-header">Standard</h3>
+            <div class="tier-price">£10</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Up to 180 minutes of footage</li>
+              <li><i class="fas fa-check"></i> Trim clips down</li>
+              <li><i class="fas fa-check"></i> Background music</li>
+              <li><i class="fas fa-check"></i> Add intro/outro if provided</li>
+              <li><i class="fas fa-check"></i> Sound effects</li>
+              <li><i class="fas fa-check"></i> Green screen effects</li>
+              <li><i class="fas fa-check"></i> Memes and extras</li>
+              <li><i class="fas fa-times"></i> Revisions included</li>
+              <li><i class="fas fa-times"></i> Source file included</li>
+            </ul>
+            <button class="buy-now-btn" onclick="openPaymentPopup('standard')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+
+          <div class="pricing-tier">
+            <h3 class="tier-header">Premium</h3>
+            <div class="tier-price">£15</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Unlimited footage</li>
+              <li><i class="fas fa-check"></i> Trim clips down</li>
+              <li><i class="fas fa-check"></i> Background music</li>
+              <li><i class="fas fa-check"></i> Add intro/outro if provided</li>
+              <li><i class="fas fa-check"></i> Sound effects</li>
+              <li><i class="fas fa-check"></i> Green screen effects</li>
+              <li><i class="fas fa-check"></i> Memes and extras</li>
+              <li><i class="fas fa-check"></i> 2 Revisions included</li>
+              <li><i class="fas fa-check"></i> Source file if applicable</li>
+            </ul>
+            <button class="buy-now-btn" onclick="openPaymentPopup('premium')">
+              <i class="fab fa-paypal"></i> Get Started
+            </button>
+          </div>
+        </div>
+        
+        <div class="optional-additions">
+          <h2>Optional Additions</h2>
+          <div class="additions-grid">
+            <div class="addition-item">
+              <i class="fas fa-closed-captioning"></i>
+              <h3>Subtitles</h3>
+              <p class="addition-price">£2.00</p>
+              <p>Professional subtitles added to your video</p>
+              <a href="#" class="see-example-link" onclick="highlightSubtitlesExample(); return false;">
+                <i class="fas fa-eye"></i> See example
+              </a>
+            </div>
+            <div class="addition-item">
+              <i class="fas fa-bell"></i>
+              <h3>Interaction Reminders</h3>
+              <p class="addition-price">£1.50</p>
+              <p>Like & Subscribe animations and reminders</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -50,9 +134,48 @@
       <div class="popup-grid">
         <div class="popup-option payment-option">
           <h2>PayPal</h2>
+          <button class="undo-tier" onclick="undoTierSelection()">
+            <i class="fas fa-undo"></i> Change Tier
+          </button>
+          <div class="selected-tier-display"></div>
           <p>This is easier for me, and I'll get back to you quicker and start work right away. Include contact info in the payment comment.</p>
-          <a href="https://paypal.me/xdanfr/10" class="paypal-btn">
-            <i class="fab fa-paypal"></i> Pay £10 with PayPal
+          
+          <div class="tier-selector">
+            <h3>Select Your Tier</h3>
+            <div class="tier-buttons">
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="5" onclick="selectTier('basic')">Basic - £5</button>
+              </div>
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="10" onclick="selectTier('standard')">Standard - £10</button>
+              </div>
+              <div class="tier-btn-wrapper">
+                <button class="tier-btn" data-price="15" onclick="selectTier('premium')">Premium - £15</button>
+              </div>
+            </div>
+            <a href="#what-i-offer" class="help-link" onclick="scrollToOffers()">
+              Help, what do these mean? <i class="fas fa-question-circle"></i>
+            </a>
+          </div>
+
+          <div class="additions-selector">
+            <h3>Optional Add-ons</h3>
+            <label class="addon-checkbox">
+              <input type="checkbox" id="subtitles" onchange="updatePrice()">
+              Add Subtitles (+£2.00)
+            </label>
+            <label class="addon-checkbox">
+              <input type="checkbox" id="reminders" onchange="updatePrice()">
+              Interaction Reminders (+£1.50)
+            </label>
+          </div>
+
+          <div class="total-price">
+            <h3>Total: £<span id="totalPrice">0.00</span></h3>
+          </div>
+
+          <a href="#" id="paypalButton" class="paypal-btn" onclick="return handlePayment()">
+            <i class="fab fa-paypal"></i> Pay with PayPal
           </a>
         </div>
         

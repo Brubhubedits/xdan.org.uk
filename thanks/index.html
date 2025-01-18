@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XDan - Thank You!</title>
+  <link rel="stylesheet" href="thankyou-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="welcome-screen">
+    <h1>Thank You!</h1> 
+  </div>
+
+  <main class="hidden">
+    <header>
+      <div class="logo-container">
+        <img src="https://xdan.co.uk/icon1.png" alt="XDan Logo" class="logo">
+        <h1>XDan</h1>
+      </div>
+    </header>
+
+    <section class="thank-you">
+      <div class="thank-you-content">
+        <h2><i class="fas fa-check-circle"></i> Payment Received!</h2>
+        <p class="message">Thank you for choosing XDan for your video editing needs! Let's get started with your project.</p>
+        
+        <div class="next-steps">
+          <h3>Next Steps</h3>
+          <ol>
+            <li>
+              <div class="step-content">
+                <i class="fas fa-receipt"></i>
+                <span>Send your PayPal order ID to:</span>
+                <a href="mailto:danielopinionr@gmail.com" class="email-link">danielopinionr@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <i class="fas fa-film"></i>
+                <span>Send your footage to the same email address</span>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <i class="fas fa-video"></i>
+                <span>Send any intro/outro you want me to use</span>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <i class="fas fa-list-ul"></i>
+                <span>Include any specific requirements or preferences</span>
+              </div>
+            </li>
+            <li>
+              <div class="step-content">
+                <i class="fas fa-clock"></i>
+                <span>Wait for my response - I'll get back to you as soon as possible!</span>
+              </div>
+            </li>
+          </ol>
+          
+          <div class="note">
+            <i class="fas fa-info-circle"></i> Note: I may not respond during school hours or 10:30am-12pm on Sundays due to church commitments.
+          </div>
+        </div>
+
+        <div class="contact-options">
+          <h3>Need to reach me?</h3>
+          <div class="contact-buttons">
+            <a href="mailto:danielopinionr@gmail.com" class="contact-btn">
+              <i class="fas fa-envelope"></i> Email Me
+            </a>
+            <a href="https://instagram.com/yourfav.dan" class="contact-btn">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://discord.gg/5rSDcZvJAf" class="contact-btn">
+              <i class="fab fa-discord"></i> Discord
+            </a>
+          </div>
+        </div>
+
+        <div class="return-home">
+          <a href="https://xdan.org.uk" class="home-btn">
+            <i class="fas fa-home"></i> Return to Homepage
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Discord Help Popup -->
+  <div class="discord-popup" id="discordPopup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closeDiscordPopup()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="discord-help">
+        <h2><i class="fab fa-discord"></i> Discord Help</h2>
+        <div class="help-steps">
+          <ol>
+            <li>Make a ticket in #editing-tickets and ping me there.</li>
+            <li>DM me if I'm still not responding.</li>
+            <li>In the unlikely case you can't reach me there, consider another platform or check #announcements.</li>
+          </ol>
+        </div>
+        
+        <a href="https://discord.gg/5rSDcZvJAf" class="join-discord-btn" target="_blank">
+          <i class="fab fa-discord"></i> Join the Server
+        </a>
+        
+        <div class="cant-reach-container">
+          <button class="cant-reach-btn">
+            I still can't reach you!
+          </button>
+          <div class="cant-reach-message hidden">
+            If you're out of luck, try DMing another founder like sigma or pwul. They may be able to direct you to me. I'll apologise a million times and then help. This is super unlikely to happen but a last resort nonetheless.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="thankyou-script.js"></script>
+</body>
+</html>
